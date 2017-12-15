@@ -26,7 +26,7 @@
 @goto ISERR
  )
 )
-@if NOT EXIST %TMPINST%\nul goto NOINST
+@REM if NOT EXIST %TMPINST%\nul goto NOINST
 
 @echo Doing build output to %TMPLOG%
 @echo Doing build output to %TMPLOG% > %TMPLOG%
@@ -39,6 +39,10 @@
 @cd %BLDDIR%
 
 @REM :DNARCH
+
+@REM Note special install location of the 5.6.0 release version of Tody
+@set TMPINST=F:/Projects/install/msvc140-64/tidy-5.6.0-vc14-64b
+@if NOT EXIST %TMPINST%\nul goto NOINST
 
 @REM ############################################
 @REM NOTE: SPECIAL INSTALL LOCATION

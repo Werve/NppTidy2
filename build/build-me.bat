@@ -4,7 +4,8 @@
 @set TMPPRJ=tidy2
 @set TMPSRC=..
 @set TMPBGN=%TIME%
-@set TMPINS=F:\Projects\software
+@REM set TMPINS=F:\Projects\software
+@set TMPINS=F:\Projects\install\msvc140-32\tidy-5.6.0-vc14-32b
 @set DOINST=0
 @set TMPLOG=bldlog-1.txt
 
@@ -20,6 +21,7 @@
 
 @call chkmsvc %TMPPRJ%
 @REM call chkbranch master
+@if NOT EXIST %TMPINS%\nul goto NOINS
 
 @echo Build %DATE% %TIME% > %TMPLOG%
 
@@ -104,6 +106,10 @@ cmake --build . --config Release  --target INSTALL >> %TMPLOG% 2>&1
 :ERR5
 @echo ERROR: Install Release FAILED!
 @echo ERROR: Install Release  FAILED! >> %TMPLOG%
+@goto ISERR
+
+:NOINS
+@echo NOT EXIST %TMPINS%! ** FIX ME **
 @goto ISERR
 
 :ISERR
