@@ -58,8 +58,7 @@ void AboutDialog::doDialog()
         );
         lvers[res2] = 0;    // zero terminate unicode string
         /* get the IDC_VERSION full version string */
-        swprintf(buf, sizeof(buf), _T("HTML Tidy %s, date %s"
-            ", from https://github.com/htacg/tidy-html5"),
+        swprintf(buf, sizeof(buf), _T("HTML Tidy %s, date %s, from https://github.com/htacg/tidy-html5"),
             lvers, ldate);
         SetWindowText(label, buf);  /* set the label */
     }
