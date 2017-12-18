@@ -214,26 +214,12 @@ void createDefaultConfig(const char *configPath)
 	FILE *defaultConfig = fopen(configPath, "wb");
 	if (NULL != defaultConfig)
 	{
+        /* Issue #6 - add 'simple' default config, if none exists */
 		fprintf(defaultConfig, "%s", 
-			"indent: auto\r\n"
-			"indent-spaces: 2\r\n"
+			"indent: yes\r\n"
 			"wrap: 132\r\n"
-			"markup: yes\r\n"
-			"output-xml: yes\r\n"
-			"input-xml: no\r\n"
-			"numeric-entities: yes\r\n"
-			"quote-marks: yes\r\n"
-			"quote-nbsp: yes\r\n"
-			"quote-ampersand: no\r\n"
-			"break-before-br: no\r\n"
-			"uppercase-tags: no\r\n"
-			"uppercase-attributes: no\r\n"
-			"new-inline-tags: cfif, cfelse, math, mroot, \r\n"
-			"  mrow, mi, mn, mo, msqrt, mfrac, msubsup, munderover,\r\n"
-			"  munder, mover, mmultiscripts, msup, msub, mtext,\r\n"
-			"  mprescripts, mtable, mtr, mtd, mth\r\n"
-			"new-blocklevel-tags: cfoutput, cfquery\r\n"
-			"new-empty-tags: cfelse\r\n");
+			"clean: yes\r\n"
+			);
 		fclose(defaultConfig);
 	}
 }
