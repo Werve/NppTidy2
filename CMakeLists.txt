@@ -208,13 +208,13 @@ set( ${name}_HDRS
 add_library( ${name} SHARED ${${name}_SRCS} ${${name}_HDRS}  )
 target_link_libraries( ${name} ${add_LIBS} )
 message(STATUS "*** target_link_libraries( ${name} ${add_LIBS} )")
-###list(APPEND add_LIBS ${name})
+list(APPEND inst_LIBS ${name})
 
 # deal with install, if required
-# install(TARGETS ${inst_LIBS}
-#     RUNTIME DESTINATION bin
-#     LIBRARY DESTINATION lib
-#     ARCHIVE DESTINATION lib )
+install(TARGETS ${inst_LIBS}
+     RUNTIME DESTINATION bin
+     LIBRARY DESTINATION lib
+     ARCHIVE DESTINATION lib )
 # install(TARGETS ${inst_BINS} DESTINATION bin)
 # install(FILES ${inst_HDRS} DESTINATION include)
 
