@@ -179,6 +179,31 @@ include_directories(
     Tidy2/NppInterface
     )
 
+#------------------------------------------------------------------------
+# Static Windows Runtime
+#   Option to statically link to the Windows runtime. Maybe only 
+#   applies to WIN32/MSVC.
+#------------------------------------------------------------------------
+if (MSVC)
+    option( USE_STATIC_RUNTIME "Set ON to change /MD(DLL) to /MT(static)" OFF )
+    if (USE_STATIC_RUNTIME)
+        set(CompilerFlags
+            CMAKE_CXX_FLAGS
+            CMAKE_CXX_FLAGS_DEBUG
+            CMAKE_CXX_FLAGS_RELEASE
+            CMAKE_C_FLAGS
+            CMAKE_C_FLAGS_DEBUG
+            CMAKE_C_FLAGS_RELEASE
+            )
+        foreach(CompilerFlag ${CompilerFlags})
+            string(REPLACE "/MD" "/MT" ${CompilerFlag} "${${CompilerFlag}}")
+        endforeach()    
+        message(STATUS "Using /MT STATIC runtime")
+    else ()
+        message(STATUS "Using /MD DYNAMIC runtime")
+    endif ()
+endif ()
+    
 ### 1 DLL #############################################
 # Project [Tidy2], type [Application], 6 C/C++, 12 Hdrs, 0 Other, 0 INCS, 7 DEFS
 # File dir [F:\Projects\npptidy2\Tidy2\], out [F:\Projects\npptidy2], rel = [Tidy2\]
