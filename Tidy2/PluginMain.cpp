@@ -405,7 +405,7 @@ void doShowConfigHelp()
 	}
 	else
 	{
-		::ShellExecute(nppData._nppHandle, _T("open"), _T("http://w3c.github.com/tidy-html5/quickref.html"), NULL, NULL, SW_SHOW);
+		::ShellExecute(nppData._nppHandle, _T("open"), _T("http://api.html-tidy.org/tidy/quickref_next.html"), NULL, NULL, SW_SHOW);
 	}
 }
 
