@@ -5,7 +5,8 @@
 @set TMPSRC=..
 @set TMPBGN=%TIME%
 @REM set TMPINS=F:\Projects\software
-@set TMPINS=F:\Projects\install\msvc140-32\tidy-5.6.0-vc14-32b
+@REM set TMPINS=F:\Projects\install\msvc140-32\tidy-5.6.0-vc14-32b
+@set TMPINS=D:\Projects\3rdParty.x64
 @set DOINST=0
 @set TMPLOG=bldlog-1.txt
 

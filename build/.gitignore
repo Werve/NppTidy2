@@ -7,3 +7,4 @@ bldlog-1.txt
 cmake_install.cmake
 tidy-html5/*
 *.VC.db
+.vs/*
