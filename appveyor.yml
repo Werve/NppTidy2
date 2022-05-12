@@ -8,7 +8,7 @@ environment:
     - PlatformToolset: v140_xp
 
 platform:
-    #- x64
+    - x64
     - Win32
 
 configuration:
