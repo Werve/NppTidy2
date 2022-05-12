@@ -33,6 +33,7 @@ jobs:
         cd build
         cmake ..
         cmake --build . --config Release
+      shell: cmd
       
 
     - name: Test
